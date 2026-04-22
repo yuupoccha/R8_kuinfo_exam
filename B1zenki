@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B1前期 専門科目 - 過去問アーカイブ</title>
+    <style>
+        /* index.htmlと共通のスタイル */
+        body { font-family: sans-serif; line-height: 1.8; max-width: 900px; margin: 0 auto; padding: 0; background-color: #fff; }
+        header { background-color: #02356E; color: #fff; padding: 20px; text-align: center; }
+        .container { padding: 20px; }
+        h2 { color: #02356E; border-bottom: 2px solid #02356E; }
+        
+        /* リストのスタイル */
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 10px; padding: 10px; border: 1px solid #eee; border-radius: 5px; }
+        a { color: #02356E; font-weight: bold; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        .back-link { margin-top: 30px; display: block; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>B1前期 専門科目</h1>
+    </header>
+
+    <div class="container">
+        <h2>科目一覧</h2>
+        <ul>
+            <li><a href="https://example.com/kako-mon-link1" target="_blank">微分積分学I（〇〇教授）</a></li>
+            <li><a href="https://example.com/kako-mon-link2" target="_blank">線形代数学I（△△教授）</a></li>
+            <li><a href="#">専門科目A（準備中）</a></li>
+        </ul>
+
+        <a href="index.html" class="back-link">← トップページに戻る</a>
+    </div>
+
+</body>
+</html>
