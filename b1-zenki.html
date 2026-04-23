@@ -3,140 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KUIR8 - B1F</title>
-    <link rel="icon" href="KUIR8.ico" type="image/x-icon">
+    <title>B1前期 専門科目 - 過去問ポータル</title>
     <style>
         body { 
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            line-height: 1.8; 
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 0; 
-            background-color: #ffffff; 
-            color: #333;
+            line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 0; background-color: #fff; color: #333;
         }
-        header { 
-            background-color: #02356E; 
-            color: #ffffff; 
-            padding: 20px; 
-            text-align: center; 
+        header { background-color: #02356E; color: #fff; padding: 25px; text-align: center; }
+        .container { padding: 30px 20px; }
+
+        /* セレクトボックス（授業選択ロール） */
+        .select-wrapper { margin-bottom: 30px; text-align: center; }
+        label { display: block; margin-bottom: 10px; font-weight: bold; color: #02356E; }
+        select {
+            width: 100%; max-width: 400px; padding: 12px; font-size: 16px;
+            border: 2px solid #02356E; border-radius: 8px; color: #02356E; background: #fff;
+            cursor: pointer;
         }
-        .container { padding: 20px 30px; }
-        
-        /* 科目ごとのブロック */
-        .subject-block {
-            margin-bottom: 40px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
+
+        /* 各授業のコンテンツ（初期状態は非表示） */
+        .subject-content { display: none; border: 1px solid #ddd; border-radius: 12px; overflow: hidden; animation: fadeIn 0.4s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* カテゴリの見出し */
+        .category-section { padding: 20px; border-bottom: 1px solid #eee; }
+        .category-section:last-child { border-bottom: none; }
+        .category-title { 
+            font-size: 1.1em; font-weight: bold; color: #02356E; margin-bottom: 15px; 
+            display: flex; align-items: center;
         }
-        
-        /* 小見出し：[曜時限] 科目名（教授） */
-        h3 { 
-            color: #02356E; 
-            border-left: 5px solid #02356E; 
-            padding-left: 15px;
-            font-size: 1.2em;
-            margin-bottom: 10px;
+        .category-title::before { content: "●"; margin-right: 8px; font-size: 0.8em; }
+
+        /* リンクのリスト */
+        .link-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+        .link-item {
+            background: #f0f4f8; color: #02356E; padding: 8px 16px; border-radius: 20px;
+            text-decoration: none; font-size: 0.9em; font-weight: bold; border: 1px solid transparent; transition: 0.2s;
         }
-        
-        /* 過去問リンクのリスト */
-        ul { 
-            list-style: none; 
-            padding-left: 20px; 
-            display: flex; /* 横並びにする場合（お好みで） */
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        li { margin-bottom: 5px; }
-        
-        /* 年度リンクのスタイル */
-        .year-link {
-            display: inline-block;
-            background-color: #f0f4f8;
-            color: #02356E;
-            padding: 5px 15px;
-            text-decoration: none;
-            border-radius: 20px;
-            font-weight: bold;
-            border: 1px solid #02356E;
-            transition: 0.3s;
-        }
-        .year-link:hover {
-            background-color: #02356E;
-            color: #ffffff;
-        }
-        .year-link2 {
-            display: inline-block;
-            background-color: #d0d4d8;
-            color: #02356E;
-            padding: 5px 15px;
-            text-decoration: none;
-            border-radius: 20px;
-            font-weight: bold;
-            border: 1px solid #02356E;
-            transition: 0.3s;
-        }
-        .year-link2:hover {
-            background-color: #02356E;
-            color: #ffffff;
-        }
-        
-        .back-link { 
-            margin-top: 50px; 
-            display: block; 
-            color: #02356E;
-            text-decoration: none;
-            font-weight: bold;
-        }
+        .link-item:hover { background: #02356E; color: #fff; }
+
+        .back-link { display: block; margin-top: 50px; color: #02356E; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>B1前期</h1>
+        <h1>B1前期 専門科目</h1>
     </header>
 
     <div class="container">
-        
-        <div class="subject-block">
-            <p>基本的には同じ教授の過去問（白色）を貼り付けていますが、問題数が少ない場合他の教授のもの（灰色）を載せてあります</p>
-            <h3>[火４] 微分積分学A（久保）</h3>
-            <ul>
-                <li><a href="https://drive.google.com/file/d/1BnUuS0putS3LNp04tVU5yVOZGJjEpj49" class="year-link" target="_blank">2024（久保）</a></li>
-                <li><a href="https://drive.google.com/file/d/1XtbhE2lVQ_IxfNIh2jgO1bw8RYDkqGgZ" class="year-link" target="_blank">2022（久保）</a></li>
-                <li><a href="https://drive.google.com/file/d/1-OHsW7w6-IwQOve5COgc7EtThoR7k8tx" class="year-link" target="_blank">2019（久保）</a></li>
-                <li><a href="https://drive.google.com/file/d/1Vc3TiB9UxUZmDQQRjI2z3Ed0pu1i4QAD" class="year-link" target="_blank">2018（久保）</a></li>
-                <li><a href="https://drive.google.com/file/d/1zM6T-HemvE1zwD33BhZ-Su_OEuIXUXBq" class="year-link" target="_blank">2017（久保）</a></li>
-                <li><a href="https://drive.google.com/file/d/18KZwbjXCsEs0mCs2cLpAfzAPwbnS143o" class="year-link" target="_blank">2016（久保）</a></li>
-                <li><a href="https://drive.google.com/file/d/1gRfi62Ow5lbVcFxHsCzzbdt82GtRfGnW" class="year-link" target="_blank">2015（久保）</a></li>
-                <li><a href="https://drive.google.com/file/d/13F-fJwlouwqii8WH3h7PFccTc4IND7Vs" class="year-link" target="_blank">2014（久保）</a></li>
-                <li><a href="https://drive.google.com/file/d/1b3A1kniGv2feIXaiZ4UrfEvevas1UsTu" class="year-link" target="_blank">2013（久保）</a></li>
-                <li><a href="https://drive.google.com/file/d/1dzqstjZgB402MYhmGdwRIi6lISJOp9Tq" class="year-link" target="_blank">2012（久保）</a></li>
-                <li><a href="https://drive.google.com/file/d/10mXBU7EK8iiGe9lajZTPovHDF3IsOVxv" class="year-link" target="_blank">2010（久保）</a></li>
-            </ul>
+        <div class="select-wrapper">
+            <label for="subject-select">表示する授業を選択してください</label>
+            <select id="subject-select" onchange="showSubject()">
+                <option value="">-- 授業を選択 --</option>
+                <option value="line-algebra">線形代数学I（〇〇教授）</option>
+                <option value="calculus">微分積分学I（△△教授）</option>
+            </select>
         </div>
-        <div class="subject-block">
-            <h3>[水３] 線形代数学A（辻本）</h3>
-            <ul>
-                <li><a href="https://x.com/nokonoko217820/status/1947966033593008490" class="year-link" target="_blank">2025（辻本）</a></li>
-                <li><a href="https://drive.google.com/file/d/1zBNqdA8P2BliU62dMdSFNH_cjqeDWWrG" class="year-link2" target="_blank">2025（田中）</a></li>
-                <li><a href="https://drive.google.com/file/d/1TWhprxqNPH0VkWbw03RGu8qRvWnFtHVe" class="year-link2" target="_blank">2024（田中）</a></li>
-                <li><a href="https://drive.google.com/file/d/1N5DGVWCQTkm3YRcexKGlhQOXseuUd3nk" class="year-link2" target="_blank">2024（山﨑）</a></li>
-                <li><a href="https://drive.google.com/file/d/11AnoOt-ts8NI8qfB6yD7P40abhrd4Waq" class="year-link2" target="_blank">2024（永見・山下）</a></li>
-            </ul>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 30px;">
+
+        <div id="line-algebra" class="subject-content">
+            <div class="category-section">
+                <div class="category-title">過去問</div>
+                <div class="link-list">
+                    <a href="#" class="link-item">2023年度</a>
+                    <a href="#" class="link-item">2022年度</a>
+                </div>
+            </div>
+            <div class="category-section">
+                <div class="category-title">授業ノート</div>
+                <div class="link-list">
+                    <a href="#" class="link-item">第1回〜第15回まとめ</a>
+                </div>
+            </div>
+            <div class="category-section">
+                <div class="category-title">その他</div>
+                <div class="link-list">
+                    <a href="#" class="link-item">参考書情報</a>
+                </div>
+            </div>
         </div>
-        <div class="subject-block">
-            <h3>[水４] 物理学基礎論A（上原）</h3>
-            <ul>
-                <li><a href="https://drive.google.com/file/d/1DwFcfXD8C-AuAjlKrDoO_b9M1872xuHi" class="year-link2" target="_blank">2025（石田）</a></li>
-                <li><a href="https://drive.google.com/file/d/1Sr9IDIHMNznD7EBBwlryG3_yWEFr2CdF" class="year-link2" target="_blank">2024（石田）</a></li>
-                <li><a href="https://drive.google.com/file/d/1cSeakXl0Ao-U-MUPLiQ6KU-F_qtJCMw7" class="year-link2" target="_blank">2024（野上）</a></li>
-                <li><a href="https://drive.google.com/file/d/1BRN3sjmatYgbUfrIV2XS3PgiI6FN6d88" class="year-link2" target="_blank">2024（田口）</a></li>
-            </ul>
+
+        <div id="calculus" class="subject-content">
+            <div class="category-section">
+                <div class="category-title">過去問</div>
+                <div class="link-list">
+                    <a href="#" class="link-item">2023年度</a>
+                </div>
+            </div>
+            <div class="category-section">
+                <div class="category-title">授業ノート</div>
+                <div class="link-list">
+                    <p style="color: #888; font-size: 0.9em;">現在準備中...</p>
+                </div>
+            </div>
+            <div class="category-section">
+                <div class="category-title">その他</div>
+                <div class="link-list">
+                    <a href="#" class="link-item">公式集(PDF)</a>
+                </div>
+            </div>
         </div>
 
         <a href="index.html" class="back-link">← トップページに戻る</a>
     </div>
+
+    <script>
+        function showSubject() {
+            // すべてのコンテンツを一旦非表示にする
+            const contents = document.querySelectorAll('.subject-content');
+            contents.forEach(content => content.style.display = 'none');
+
+            // 選択されたIDのコンテンツだけを表示する
+            const selectedId = document.getElementById('subject-select').value;
+            if (selectedId) {
+                document.getElementById(selectedId).style.display = 'block';
+            }
+        }
+    </script>
 
 </body>
 </html>
